@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
-    <div className="bg-white dark:bg-slate-800 text-slate-900 dark:text-white flex flex-col justify-center min-h-screen text-center gap-10">
+    <div className="flex min-h-screen flex-col justify-center gap-10 bg-white text-center text-slate-900 dark:bg-slate-800 dark:text-white">
       <h1 className="text-3xl">WDX-180</h1>
       <p className="text-xl text-slate-500 dark:text-slate-400">
         Web Development X
@@ -16,14 +16,14 @@ function App() {
       </p>
       <div>
         <button
-          className="p-2 bg-indigo-500 rounded-md shadow-lg"
+          className="rounded-md bg-indigo-500 p-2 shadow-lg"
           onClick={() => setCount((count) => count + 1)}
         >
           count is {count}
         </button>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
