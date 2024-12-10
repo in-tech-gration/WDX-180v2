@@ -381,3 +381,336 @@ export default function Example() {
   )
 }
 ```
+
+```tsx
+const stats = [
+  { name: 'Number of deploys', value: '405' },
+  { name: 'Average deploy time', value: '3.65', unit: 'mins' },
+  { name: 'Number of servers', value: '3' },
+  { name: 'Success rate', value: '98.5%' },
+]
+
+export default function Example() {
+  return (
+    <div className="bg-gray-900">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 gap-px bg-white/5 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map((stat) => (
+            <div
+              key={stat.name}
+              className="bg-gray-900 px-4 py-6 sm:px-6 lg:px-8"
+            >
+              <p className="text-sm font-medium leading-6 text-gray-400">
+                {stat.name}
+              </p>
+              <p className="mt-2 flex items-baseline gap-x-2">
+                <span className="text-4xl font-semibold tracking-tight text-white">
+                  {stat.value}
+                </span>
+                {stat.unit ? (
+                  <span className="text-sm text-gray-400">{stat.unit}</span>
+                ) : null}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+```
+
+```tsx
+const stats = [
+  {
+    name: 'Revenue',
+    value: '$405,091.00',
+    change: '+4.75%',
+    changeType: 'positive',
+  },
+  {
+    name: 'Overdue invoices',
+    value: '$12,787.00',
+    change: '+54.02%',
+    changeType: 'negative',
+  },
+  {
+    name: 'Outstanding invoices',
+    value: '$245,988.00',
+    change: '-1.39%',
+    changeType: 'positive',
+  },
+  {
+    name: 'Expenses',
+    value: '$30,156.00',
+    change: '+10.18%',
+    changeType: 'negative',
+  },
+]
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+export default function Example() {
+  return (
+    <dl className="mx-auto grid grid-cols-1 gap-px bg-gray-900/5 sm:grid-cols-2 lg:grid-cols-4">
+      {stats.map((stat) => (
+        <div
+          key={stat.name}
+          className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-white px-4 py-10 sm:px-6 xl:px-8"
+        >
+          <dt className="text-sm font-medium leading-6 text-gray-500">
+            {stat.name}
+          </dt>
+          <dd
+            className={classNames(
+              stat.changeType === 'negative'
+                ? 'text-rose-600'
+                : 'text-gray-700',
+              'text-xs font-medium'
+            )}
+          >
+            {stat.change}
+          </dd>
+          <dd className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900">
+            {stat.value}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  )
+}
+```
+
+```tsx
+const stats = [
+  { name: 'Total Subscribers', stat: '71,897' },
+  { name: 'Avg. Open Rate', stat: '58.16%' },
+  { name: 'Avg. Click Rate', stat: '24.57%' },
+]
+
+export default function Example() {
+  return (
+    <div>
+      <h3 className="text-base font-semibold leading-6 text-gray-900">
+        Last 30 days
+      </h3>
+      <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
+        {stats.map((item) => (
+          <div
+            key={item.name}
+            className="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6"
+          >
+            <dt className="truncate text-sm font-medium text-gray-500">
+              {item.name}
+            </dt>
+            <dd className="mt-1 text-3xl font-semibold tracking-tight text-gray-900">
+              {item.stat}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  )
+}
+```
+
+```tsx
+import { ArrowDownIcon, ArrowUpIcon } from '@heroicons/react/20/solid'
+import {
+  CursorArrowRaysIcon,
+  EnvelopeOpenIcon,
+  UsersIcon,
+} from '@heroicons/react/24/outline'
+
+const stats = [
+  {
+    id: 1,
+    name: 'Total Subscribers',
+    stat: '71,897',
+    icon: UsersIcon,
+    change: '122',
+    changeType: 'increase',
+  },
+  {
+    id: 2,
+    name: 'Avg. Open Rate',
+    stat: '58.16%',
+    icon: EnvelopeOpenIcon,
+    change: '5.4%',
+    changeType: 'increase',
+  },
+  {
+    id: 3,
+    name: 'Avg. Click Rate',
+    stat: '24.57%',
+    icon: CursorArrowRaysIcon,
+    change: '3.2%',
+    changeType: 'decrease',
+  },
+]
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+export default function Example() {
+  return (
+    <div>
+      <h3 className="text-base font-semibold leading-6 text-gray-900">
+        Last 30 days
+      </h3>
+
+      <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {stats.map((item) => (
+          <div
+            key={item.id}
+            className="relative overflow-hidden rounded-lg bg-white px-4 pb-12 pt-5 shadow sm:px-6 sm:pt-6"
+          >
+            <dt>
+              <div className="absolute rounded-md bg-indigo-500 p-3">
+                <item.icon aria-hidden="true" className="h-6 w-6 text-white" />
+              </div>
+              <p className="ml-16 truncate text-sm font-medium text-gray-500">
+                {item.name}
+              </p>
+            </dt>
+            <dd className="ml-16 flex items-baseline pb-6 sm:pb-7">
+              <p className="text-2xl font-semibold text-gray-900">
+                {item.stat}
+              </p>
+              <p
+                className={classNames(
+                  item.changeType === 'increase'
+                    ? 'text-green-600'
+                    : 'text-red-600',
+                  'ml-2 flex items-baseline text-sm font-semibold'
+                )}
+              >
+                {item.changeType === 'increase' ? (
+                  <ArrowUpIcon
+                    aria-hidden="true"
+                    className="h-5 w-5 flex-shrink-0 self-center text-green-500"
+                  />
+                ) : (
+                  <ArrowDownIcon
+                    aria-hidden="true"
+                    className="h-5 w-5 flex-shrink-0 self-center text-red-500"
+                  />
+                )}
+
+                <span className="sr-only">
+                  {' '}
+                  {item.changeType === 'increase'
+                    ? 'Increased'
+                    : 'Decreased'}{' '}
+                  by{' '}
+                </span>
+                {item.change}
+              </p>
+              <div className="absolute inset-x-0 bottom-0 bg-gray-50 px-4 py-4 sm:px-6">
+                <div className="text-sm">
+                  <a
+                    href="#"
+                    className="font-medium text-indigo-600 hover:text-indigo-500"
+                  >
+                    View all<span className="sr-only"> {item.name} stats</span>
+                  </a>
+                </div>
+              </div>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  )
+}
+```
+
+```tsx
+import { ArrowDownIcon, ArrowUpIcon } from '@heroicons/react/20/solid'
+
+const stats = [
+  {
+    name: 'Total Subscribers',
+    stat: '71,897',
+    previousStat: '70,946',
+    change: '12%',
+    changeType: 'increase',
+  },
+  {
+    name: 'Avg. Open Rate',
+    stat: '58.16%',
+    previousStat: '56.14%',
+    change: '2.02%',
+    changeType: 'increase',
+  },
+  {
+    name: 'Avg. Click Rate',
+    stat: '24.57%',
+    previousStat: '28.62%',
+    change: '4.05%',
+    changeType: 'decrease',
+  },
+]
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+export default function Example() {
+  return (
+    <div>
+      <h3 className="text-base font-semibold leading-6 text-gray-900">
+        Last 30 days
+      </h3>
+      <dl className="mt-5 grid grid-cols-1 divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow md:grid-cols-3 md:divide-x md:divide-y-0">
+        {stats.map((item) => (
+          <div key={item.name} className="px-4 py-5 sm:p-6">
+            <dt className="text-base font-normal text-gray-900">{item.name}</dt>
+            <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
+              <div className="flex items-baseline text-2xl font-semibold text-indigo-600">
+                {item.stat}
+                <span className="ml-2 text-sm font-medium text-gray-500">
+                  from {item.previousStat}
+                </span>
+              </div>
+
+              <div
+                className={classNames(
+                  item.changeType === 'increase'
+                    ? 'bg-green-100 text-green-800'
+                    : 'bg-red-100 text-red-800',
+                  'inline-flex items-baseline rounded-full px-2.5 py-0.5 text-sm font-medium md:mt-2 lg:mt-0'
+                )}
+              >
+                {item.changeType === 'increase' ? (
+                  <ArrowUpIcon
+                    aria-hidden="true"
+                    className="-ml-1 mr-0.5 h-5 w-5 flex-shrink-0 self-center text-green-500"
+                  />
+                ) : (
+                  <ArrowDownIcon
+                    aria-hidden="true"
+                    className="-ml-1 mr-0.5 h-5 w-5 flex-shrink-0 self-center text-red-500"
+                  />
+                )}
+
+                <span className="sr-only">
+                  {' '}
+                  {item.changeType === 'increase'
+                    ? 'Increased'
+                    : 'Decreased'}{' '}
+                  by{' '}
+                </span>
+                {item.change}
+              </div>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  )
+}
+```

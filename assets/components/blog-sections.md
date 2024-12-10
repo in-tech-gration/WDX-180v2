@@ -85,7 +85,9 @@ export default function Example() {
     </div>
   )
 }
+```
 
+```tsx
 const posts = [
   {
     id: 1,
@@ -182,7 +184,9 @@ export default function Example() {
     </div>
   )
 }
+```
 
+```tsx
 const posts = [
   {
     id: 1,
@@ -263,7 +267,9 @@ export default function Example() {
     </div>
   )
 }
+```
 
+```tsx
 const posts = [
   {
     id: 1,
@@ -348,7 +354,9 @@ export default function Example() {
     </div>
   )
 }
+```
 
+```tsx
 const posts = [
   {
     id: 1,
@@ -447,6 +455,9 @@ export default function Example() {
     </div>
   )
 }
+```
+
+```tsx
 const featuredPost = {
   id: 1,
   title: 'We’re incredibly proud to announce we have secured $75m in Series B',
@@ -568,7 +579,9 @@ export default function Example() {
     </div>
   )
 }
+```
 
+```tsx
 const jobOpenings = [
   {
     id: 1,
