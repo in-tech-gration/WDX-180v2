@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.app {
+  @apply flex min-h-screen flex-col justify-between gap-5 bg-white text-center text-slate-900 dark:bg-slate-800 dark:text-white;
+}
+
+.page-home {
+  @apply flex min-h-80 flex-col justify-between;
+}
+
+.page-about {
+  @apply flex min-h-80 flex-col justify-between;
+}
+
+.button-primary {
+  @apply w-fit self-center rounded-md bg-slate-800 p-2 text-center text-white dark:bg-white dark:text-slate-900;
+}
+
+/* Add more custom classes that use inline Tailwind classes for future components */
