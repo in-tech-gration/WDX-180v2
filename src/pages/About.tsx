@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function About() {
   return (
-    <>
+    <div className="page-about">
       <h2 className="text-2xl">About</h2>
       <p className="text-xl text-slate-500 dark:text-slate-400">
         This is Web Development X 180°. An introductory course to the web and
@@ -22,12 +22,9 @@ export default function About() {
         </Link>
         accompanying the video above.
       </p>
-      <Link
-        to="/"
-        className="w-fit self-center rounded-md bg-slate-800 p-2 text-center text-white dark:bg-white dark:text-slate-900"
-      >
+      <Link to="/" className="button-primary">
         Home
       </Link>
-    </>
+    </div>
   )
 }
