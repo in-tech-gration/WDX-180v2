@@ -22,6 +22,12 @@ export default function About() {
         </Link>
         accompanying the video above.
       </p>
+      <Link
+        to="/"
+        className="w-fit self-center rounded-md bg-slate-800 p-2 text-center text-white dark:bg-white dark:text-slate-900"
+      >
+        Home
+      </Link>
     </>
   )
 }
